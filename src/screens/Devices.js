@@ -96,7 +96,7 @@ const Devices = ({ navigation }) => {
         <View
           style={{
             backgroundColor: "orange",
-            height: "16%",
+            height: "15%",
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             paddingHorizontal: 20,
@@ -115,7 +115,7 @@ const Devices = ({ navigation }) => {
             <View
               style={{
                 //width:'100%',
-                marginTop: 0,
+                marginTop: -33,
                 alignItems: "center",
               }}
             >
