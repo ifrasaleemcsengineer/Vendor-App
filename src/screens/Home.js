@@ -10,6 +10,7 @@ import UserTable from "../components/UserTable";
 import Notifications from "./Notifications";
 import Users from "./Users";
 import SearchBar from "../components/SearchBar";
+import Noti from "./Noti";
 
 const Home = ({ navigation }) => {
   const nav = useNavigation();
@@ -292,6 +293,9 @@ const Home = ({ navigation }) => {
             setClicked={setClicked}
           />
         </View>
+      </View>
+      <View>
+        <Noti />
       </View>
     </SafeAreaView>
   );

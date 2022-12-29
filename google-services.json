@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "756913263367",
+    "project_id": "gascylinderapp-6fa3e",
+    "storage_bucket": "gascylinderapp-6fa3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756913263367:android:d65423349f0a5a1e102ba2",
+        "android_client_info": {
+          "package_name": "com.ifra12.VendorApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756913263367-di1rbu58r604lfl7t09aicq4cl6rrfit.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ifra12.VendorApp",
+            "certificate_hash": "7199172a8cf0024975ecab2205dfaca238cd6a4e"
+          }
+        },
+        {
+          "client_id": "756913263367-v3ais1sbk1qios7da0mub7d2fmu931p3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ifra12.VendorApp",
+            "certificate_hash": "e0711e2c45d89c99d7cb36052e9f790375f67245"
+          }
+        },
+        {
+          "client_id": "756913263367-m5rg1l7j67jb0c0sa5nuonhr9bmvur0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo0_cHc2IsS-wauBLUce_zMir-rp4Zo10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756913263367-m5rg1l7j67jb0c0sa5nuonhr9bmvur0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
