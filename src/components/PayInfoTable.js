@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   head: { 
     height: 70, 
-    backgroundColor: '#808B97' 
+    backgroundColor: '#D9DDDC' 
   },
   text: { 
     margin: 8, 

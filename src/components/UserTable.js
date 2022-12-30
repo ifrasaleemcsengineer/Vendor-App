@@ -11,6 +11,8 @@ const Item = ({ userId, status }) => {
   function _alertIndex(index) {
     Alert.alert(`This is row ${index + 1}`);
   }
+  const navigation = useNavigation();
+
   return (
     <View style={styles.row}>
       <Text style={styles.text}>{userId}</Text>
@@ -20,11 +22,16 @@ const Item = ({ userId, status }) => {
           <Text style={styles.btnText}>Refill</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate(User1)}>
+      <View style={styles.btn}>
+          <Text style={styles.btnText}>View</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
 const UserTable = ({ searchPhrase, setClicked, data }) => {
-  const tableHead = ["UID", "Status", "Refuel"];
+  const tableHead = ["UID", "Status", "Action"];
   const renderItem = ({ item }) => {
     // when no input, show all
     if (searchPhrase === "") {
@@ -63,7 +70,7 @@ const UserTable = ({ searchPhrase, setClicked, data }) => {
             setClicked(false);
           }}
         >
-          <TouchableOpacity onPress={() => navigation.navigate("User1")}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate("User1")}> */}
             <FlatList
               stickyHeaderIndices={[0]}
               ListHeaderComponent={
@@ -80,7 +87,7 @@ const UserTable = ({ searchPhrase, setClicked, data }) => {
               keyExtractor={(item) => item.id}
               ListFooterComponent={<View />}
             />
-          </TouchableOpacity>
+          {/* </TouchableOpacity> */}
         </View>
       </View>
     </View>
@@ -95,14 +102,14 @@ const styles = StyleSheet.create({
   },
   head: {
     height: 70,
-    backgroundColor: "#808B97",
+    backgroundColor: "#D9DDDC",
     flexDirection: "row",
     justifyContent: "space-between",
   },
 
   headtext: {
     width: 70,
-    marginLeft: 40,
+    marginLeft: 10,
     marginRight: 20,
   },
   view: {
@@ -111,7 +118,7 @@ const styles = StyleSheet.create({
   text: {
     width: 75,
     margin: 8,
-    marginLeft: 30,
+    marginLeft: 10,
     marginRight: 20,
   },
   row: {
@@ -122,9 +129,10 @@ const styles = StyleSheet.create({
   btn: {
     width: 60,
     height: 20,
-    backgroundColor: "#78B7BB",
+    backgroundColor: "rgb(255, 177, 33)",
     borderRadius: 2,
-    margin: 8,
+    margin: 4,
+    marginTop:8
   },
   btnText: {
     textAlign: "center",

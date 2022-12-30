@@ -285,6 +285,7 @@ const Home = ({ navigation }) => {
         <View
           style={{
             alignSelf: "center",
+            marginTop: -20,
           }}
         >
           <UserTable
