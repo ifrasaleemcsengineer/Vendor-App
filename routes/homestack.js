@@ -14,7 +14,6 @@ import User1 from "../src/screens/User1";
 import CreateDevice from "../src/screens/CreateDevice";
 import PaymentInfo from "../src/screens/PaymentInfo";
 
-
 const Stack = createNativeStackNavigator();
 
 export const MyStack = () => {
@@ -32,6 +31,8 @@ export const MyStack = () => {
         <Stack.Screen name="Refuel" component={Refuel} />
         <Stack.Screen name="PaymentForm" component={PaymentForm} />
         <Stack.Screen name="CreateDevice" component={CreateDevice} />
+        <Stack.Screen name="LogIn" component={LogIn} />
+
 
 
 

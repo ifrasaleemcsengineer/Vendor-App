@@ -15,8 +15,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import LogIn from '../screens/LogIn';
+import { useNavigation } from '@react-navigation/native';
 
 const CustomDrawer = props => {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <DrawerContentScrollView
@@ -60,6 +63,8 @@ const CustomDrawer = props => {
         style={{paddingVertical: 15}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Ionicons name="exit-outline" size={22} />
+            <TouchableOpacity onPress={() => navigation.navigate(LogIn)}>
+
             <Text
               style={{
                 fontSize: 15,
@@ -68,6 +73,7 @@ const CustomDrawer = props => {
               }}>
               Sign Out
             </Text>
+            </TouchableOpacity>
           </View>
         </TouchableOpacity>
       </View>
