@@ -23,45 +23,15 @@ import Devices from "./src/screens/Devices";
 import Device1 from "./src/screens/Device1";
 import CreateDevice from "./src/screens/CreateDevice";
 
-const Drawer = createDrawerNavigator();
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={(props) => <CustomDrawer {...props} />}
-        screenOptions={{
-          headerShown: false,
-          drawerActiveBackgroundColor: "orange",
-          drawerActiveTintColor: "#FFF",
-          //drawerInactiveBackgroundColor:'#333',
-          drawerLabelStyle: { marginLeft: 0, fontSize: 15 },
-        }}
-      >
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Users" component={Users} />
-        <Drawer.Screen name="Devices" component={Devices} />
-        <Drawer.Screen name="History" component={History} />
-        <Drawer.Screen name="Payment Info" component={PaymentInfo} />
-        <Drawer.Screen name="Invoice" component={Invoice} />
-        <Drawer.Screen name="About Us" component={AboutUs} />
-        <Drawer.Screen name="Contact Us" component={ContactUs} />
-        <Drawer.Screen name="FAQ'S" component={FAQ} />
-        <Drawer.Screen name="Login" component={LogIn} />
-        <Drawer.Screen name="Notifications" component={Notifications} />
-        <Drawer.Screen name="CreateUser" component={CreateUser} />
-        <Drawer.Screen name="CreateDevice" component={CreateDevice} />
-        <Drawer.Screen name="Refuel" component={Refuel} />
-        <Drawer.Screen name="PaymentForm" component={PaymentForm} />
-        <Drawer.Screen name="User1" component={User1} />
-        <Drawer.Screen name="Device1" component={Device1} />
-      </Drawer.Navigator>
-    </NavigationContainer>
 
-    //     <MyStack>
-    //   <LogIn/>
-    //  </MyStack>
+        <MyStack>
+      <LogIn/>
+     </MyStack>
   );
 }

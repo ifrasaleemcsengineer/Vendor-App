@@ -51,7 +51,7 @@ const PaymentInfo = ({ navigation }) => {
                 fontSize: 28,
                 color: "#FFF",
                 fontWeight: "bold",
-              }}>Payment Info</Text>
+              }}>My Accounts</Text>
             </View>
           </View>
         </View>

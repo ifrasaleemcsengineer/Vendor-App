@@ -9,6 +9,7 @@ import Battery from "react-native-vector-icons/Entypo";
 import Cylinder from "react-native-vector-icons/MaterialCommunityIcons";
 import Refuel from "./Refuel";
 import Devices from "./Devices";
+import User1 from "./User1";
 
 const Device1 = ({ navigation }) => {
   return (

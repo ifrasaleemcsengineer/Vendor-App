@@ -5,7 +5,7 @@ import { windowHeight, windowWidth } from "../utils/Dimensions";
 import { useNavigation } from "@react-navigation/native";
 import User1 from "../screens/User1";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
-
+import Device1 from "../screens/Device1";
 const Item = ({ userId, status }) => {
   const index = 0;
   function _alertIndex(index) {
@@ -18,15 +18,11 @@ const Item = ({ userId, status }) => {
       <Text style={styles.text}>{userId}</Text>
       <Text style={styles.text}>{status}</Text>
      
-      <TouchableOpacity onPress={() => navigation.navigate(User1)}>
-      <View style={styles.btn}>
-          <Text style={styles.btnText}>View</Text>
-        </View>
-      </TouchableOpacity>
+      
     </View>
   );
 };
-const UserTable = ({ searchPhrase, setClicked, data }) => {
+const UserDevicesTable = ({ searchPhrase, setClicked, data }) => {
   const tableHead = ["UID", "Status", "Action"];
   const renderItem = ({ item }) => {
     // when no input, show all
@@ -136,4 +132,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserTable;
+export default UserDevicesTable;

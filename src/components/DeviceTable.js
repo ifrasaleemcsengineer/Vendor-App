@@ -3,8 +3,9 @@ import { StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import { Table, TableWrapper, Row, Cell } from "react-native-table-component";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import { useNavigation } from "@react-navigation/native";
-import Device1 from "../screens/Device1";
+import User1 from "../screens/User1";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
+import Device1 from "../screens/Device1";
 
 const Item = ({ userId, status }) => {
   const index = 0;
@@ -17,18 +18,13 @@ const Item = ({ userId, status }) => {
     <View style={styles.row}>
       <Text style={styles.text}>{userId}</Text>
       <Text style={styles.text}>{status}</Text>
-      <TouchableOpacity onPress={() => _alertIndex(index)}>
-        <View style={styles.btn}>
-          <Text style={styles.btnText}>Refill</Text>
-        </View>
-      </TouchableOpacity>
-      
+     
       <TouchableOpacity onPress={() => navigation.navigate(Device1)}>
       <View style={styles.btn}>
           <Text style={styles.btnText}>View</Text>
         </View>
       </TouchableOpacity>
-      </View>
+    </View>
   );
 };
 const DeviceTable = ({ searchPhrase, setClicked, data }) => {
@@ -71,7 +67,7 @@ const DeviceTable = ({ searchPhrase, setClicked, data }) => {
             setClicked(false);
           }}
         >
-          {/* <TouchableOpacity onPress={() => navigation.navigate(Device1)}> */}
+          {/* <TouchableOpacity onPress={() => navigation.navigate("User1")}> */}
             <FlatList
               stickyHeaderIndices={[0]}
               ListHeaderComponent={
@@ -110,7 +106,7 @@ const styles = StyleSheet.create({
 
   headtext: {
     width: 70,
-    marginLeft: 10,
+    marginLeft: 25,
     marginRight: 20,
   },
   view: {
@@ -119,7 +115,7 @@ const styles = StyleSheet.create({
   text: {
     width: 75,
     margin: 8,
-    marginLeft: 10,
+    marginLeft: 24,
     marginRight: 20,
   },
   row: {
