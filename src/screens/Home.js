@@ -233,16 +233,15 @@ const Home = ({ navigation }) => {
           <View
             style={{
               alignItems: "center",
-              marginTop: windowHeight - 700,
-              
+              marginTop: windowHeight - 700,             
               justifyContent: "center",
-              height: windowHeight - 450, width: windowWidth, alignItems: "center", paddingLeft:100,
+              height: windowHeight - 450, width: windowWidth, alignItems: "center", paddingLeft:110,
               paddingRight:70,
             }}
           >
             <Image
               source={require("../../assets/images/logo_1.png")}
-              style={{ height: windowHeight - 450, width: windowWidth-50, alignItems: "center", paddingLeft:100,
+              style={{ height: windowHeight - 390, width: windowWidth, alignItems: "center", paddingLeft:100,
               paddingRight:70, }}
             />
           </View>
