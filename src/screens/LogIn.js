@@ -6,6 +6,8 @@ import {windowHeight} from '../../src/utils/Dimensions'
 import {windowWidth} from '../../src/utils/Dimensions'
 import Logo from '../../assets/images/logo_1.png'
 import Home from './Home'
+import TermsConditions from './TermsConditions'
+import PrivacyPolicy from './PrivacyPolicy'
 
 const LogIn = ({navigation}) => {
   const [ modelno, setModelno] = useState('');
@@ -57,8 +59,8 @@ const LogIn = ({navigation}) => {
             marginVertical: 12,}}
             />
             <Text>By Registering, you confirm that you accept our {''}
-    <Text style={{color:'blue'}} onPress={''}>Terms of Use</Text> and {''}
-    <Text style={{color:'blue'}} onPress={''}>Privacy Policy.</Text>
+    <Text style={{color:'blue'}} onPress={() => navigation.navigate(TermsConditions)}>Terms of Use</Text> and {''}
+    <Text style={{color:'blue'}} onPress={() => navigation.navigate(PrivacyPolicy)}>Privacy Policy.</Text>
     </Text>
     <View style={{
       marginTop:20,

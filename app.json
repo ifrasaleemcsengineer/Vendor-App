@@ -26,14 +26,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.ifra12.VendorApp"
+      "package": "com.codeveloopers.VendorApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "f89e4546-d51c-4dfa-a329-b7aa85b2ef3e"
+        "projectId": "48fd9c0e-fb1c-4e5b-8672-969ed971aa22"
       }
     }
   }

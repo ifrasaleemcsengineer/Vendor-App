@@ -44,8 +44,7 @@ export function DrawerContent (props) {
       <Drawer.Screen name="About Us" component={AboutUs} />
       <Drawer.Screen name="Contact Us" component={ContactUs} />
       <Drawer.Screen name="FAQ" component={FAQ} />
-      <Drawer.Screen name="Terms & Conditions" component={TermsConditions} /> 
-      <Drawer.Screen name="Privacy Policy" component={PrivacyPolicy} />
+      
     </Drawer.Navigator>
     )
   }
