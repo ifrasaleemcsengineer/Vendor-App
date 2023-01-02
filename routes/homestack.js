@@ -13,6 +13,7 @@ import PaymentForm from "../src/screens/PaymentForm";
 import User1 from "../src/screens/User1";
 import CreateDevice from "../src/screens/CreateDevice";
 import PaymentInfo from "../src/screens/PaymentInfo";
+import UserDevice1 from "../src/screens/VendorDevice1";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,9 +33,7 @@ export const MyStack = () => {
         <Stack.Screen name="PaymentForm" component={PaymentForm} />
         <Stack.Screen name="CreateDevice" component={CreateDevice} />
         <Stack.Screen name="LogIn" component={LogIn} />
-
-
-
+        <Stack.Screen name="UserDevice1" component={UserDevice1} />
 
         {/* <Stack.Screen name="Home1" component={Home1} /> */}
       </Stack.Navigator>      

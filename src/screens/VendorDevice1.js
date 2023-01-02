@@ -2,16 +2,16 @@ import { View, Text, TouchableOpacity, Button } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import { windowHeight } from "../../src/utils/Dimensions";
-import { windowWidth } from "../../src/utils/Dimensions";
+import { windowHeight } from "../utils/Dimensions";
+import { windowWidth } from "../utils/Dimensions";
 import Weight from "react-native-vector-icons/FontAwesome5";
 import Battery from "react-native-vector-icons/Entypo";
 import Cylinder from "react-native-vector-icons/MaterialCommunityIcons";
 import Refuel from "./Refuel";
 import Devices from "./Devices";
-import User1 from "./User1";
 
-const Device1 = ({ navigation }) => {
+
+const VendorDevice1 = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
@@ -42,7 +42,7 @@ const Device1 = ({ navigation }) => {
               marginTop: 20,
             }}
           >
-            <TouchableOpacity onPress={() => navigation.navigate(User1)}>
+            <TouchableOpacity onPress={() => navigation.navigate(Devices)}>
               <AntDesign name="back" size={30} color="#FFF" />
             </TouchableOpacity>
             <View
@@ -59,7 +59,7 @@ const Device1 = ({ navigation }) => {
                   fontWeight: "bold",
                 }}
               >
-                User Device1
+                Device1
               </Text>
             </View>
           </View>
@@ -170,15 +170,11 @@ const Device1 = ({ navigation }) => {
             marginTop: 25,
           }}
         >
-          <Button
-            onPress={() => navigation.navigate(Refuel)}
-            title="Refuel"
-            color="orange"
-          />
+          
         </View>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Device1;
+export default VendorDevice1;

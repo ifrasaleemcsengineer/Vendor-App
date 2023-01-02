@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import User1 from "../screens/User1";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import Device1 from "../screens/Device1";
+import VendorDevice1 from "../screens/VendorDevice1";
 
 const Item = ({ userId, status }) => {
   const index = 0;
@@ -19,7 +20,7 @@ const Item = ({ userId, status }) => {
       <Text style={styles.text}>{userId}</Text>
       <Text style={styles.text}>{status}</Text>
      
-      <TouchableOpacity onPress={() => navigation.navigate(Device1)}>
+      <TouchableOpacity onPress={() => navigation.navigate(VendorDevice1)}>
       <View style={styles.btn}>
           <Text style={styles.btnText}>View</Text>
         </View>

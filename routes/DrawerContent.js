@@ -17,6 +17,8 @@ import Devices from "../src/screens/Devices";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import CreateDevice from "../src/screens/CreateDevice";
+import TermsConditions from "../src/screens/TermsConditions";
+import PrivacyPolicy from "../src/screens/PrivacyPolicy";
 
 const Drawer = createDrawerNavigator();
 
@@ -41,8 +43,9 @@ export function DrawerContent (props) {
       <Drawer.Screen name="Invoice" component={Invoice} />
       <Drawer.Screen name="About Us" component={AboutUs} />
       <Drawer.Screen name="Contact Us" component={ContactUs} />
-      <Drawer.Screen name="FAQ" component={FAQ} /> 
-      {/* <Drawer.Screen name="Device1" component={Device1} /> */}
+      <Drawer.Screen name="FAQ" component={FAQ} />
+      <Drawer.Screen name="Terms & Conditions" component={TermsConditions} /> 
+      <Drawer.Screen name="Privacy Policy" component={PrivacyPolicy} />
     </Drawer.Navigator>
     )
   }

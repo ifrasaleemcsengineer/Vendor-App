@@ -1,48 +1,16 @@
-import { View, Text, TouchableOpacity, Button} from 'react-native'
-import React, { useEffect, useState } from "react";
-import { SafeAreaView } from 'react-native-safe-area-context'
-import AntDesign from 'react-native-vector-icons/AntDesign'
-import { windowHeight } from '../../src/utils/Dimensions'
-import { windowWidth } from '../../src/utils/Dimensions'
-import Weight from 'react-native-vector-icons/FontAwesome5'
-import Battery from 'react-native-vector-icons/Entypo'
-import Cylinder from 'react-native-vector-icons/MaterialCommunityIcons'
-import Users from './Users'
-import Refuel from './Refuel'
-import Device1 from "../screens/Device1";
-import UserDevicesTable from '../components/DeviceTable'
-import Devices from './Devices'
-import { useNavigation } from '@react-navigation/native'
-import SearchBar from "../components/SearchBar";
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, Text, TouchableOpacity, Button, StyleSheet } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import { windowHeight } from "../../src/utils/Dimensions";
+import { windowWidth } from "../../src/utils/Dimensions";
+import Users from "./Users";
+import { Row, Table, TableWrapper } from "react-native-table-component";
+import Device1 from "./Device1";
 
-const Item = ({ userId, status }) => {
-  const index = 0;
-  function _alertIndex(index) {
-    Alert.alert(`This is row ${index + 1}`);
-  }
-  const navigation = useNavigation();
-
-  return (
-    <View style={styles.row}>
-      <Text style={styles.text}>{userId}</Text>
-      <Text style={styles.text}>{status}</Text>
-      
-      
-      <TouchableOpacity onPress={() => navigation.navigate(Device1)}>
-      <View style={styles.btn}>
-          <Text style={styles.btnText}>Vi</Text>
-        </View>
-      </TouchableOpacity>
-      </View>
-  );
-};
-
-const User1 = ({navigation}) => {
-  const nav = useNavigation();
-  const [searchPhrase, setSearchPhrase] = useState("");
-  const [clicked, setClicked] = useState(false);
-  const [fakeData, setFakeData] = useState();
+const User1 = ({ navigation }) => {
+  const tableHead = ["Device ID", "Status", "Action"];
+  // Temporary data
   const data = [
     {
       userId: "01",
@@ -61,98 +29,24 @@ const User1 = ({navigation}) => {
       status: "UnAssigned",
     },
     {
-      userId: "055",
+      userId: "05",
       status: "Assigned",
     },
     {
-      userId: "055",
+      userId: "06",
       status: "Assigned",
     },
-    
-    
-    
   ];
 
-  // get data from the fake api endpoint
-  useEffect(() => {
-    const getData = () => {
-      setFakeData(data);
-    };
-    getData();
-  }, []);
-
   return (
-    <SafeAreaView style={{
+    <SafeAreaView
+      style={{
         height: windowHeight,
         width: windowWidth,
         flex: 1,
-      }}>
-        <View style={{
-          flex: 1,
-          backgroundColor: 'lightgray',
-        }}>
-          <View style={{
-            backgroundColor: "orange",
-            height: "20%",
-            borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,
-            paddingHorizontal: 20,
-          }}>
-            <View style={{
-              //flexDirection: 'row',
-              //justifyContent: 'space-between',
-              marginTop: 20,
-            }}>
-              <TouchableOpacity
-                onPress={()=> navigation.navigate(Users)}
-              >
-                <AntDesign name='back' size={30} color='#FFF' />
-              </TouchableOpacity>
-              <View style={{
-                //width:'100%',
-                marginTop: 0,
-                alignItems: 'center',
-              }}>
-                <Text style={{
-                  fontSize: 28,
-                  color: "#FFF",
-                  fontWeight: "bold",
-                }}>User1</Text>
-              </View>
-            </View>
-          </View>
-          <View style={{
-            height:windowHeight - 500,
-            width:windowWidth,
-            marginTop:10,
-            backgroundColor:'#FFF',
-            
-          }}>
-            
-<Text style={{
-    fontSize:20,
-    marginLeft: 10,
-    marginTop: 10,
-    textAlign: "center",
-
-}}>
-  
-    User Information
-    </Text>
-    <View style={{
-      marginLeft: 10,
-      fontSize:20,
-      marginTop: 10,
-      paddingBottom: 5,
-      
-    }}>
-    <Text>Name:</Text>
-    <Text>Email:</Text>
-    <Text>Phone Number:</Text>
-    <Text>No of Devices:</Text>
-    </View>
-          </View>
-          <View
+      }}
+    >
+      <View
         style={{
           flex: 1,
           backgroundColor: "lightgray",
@@ -160,8 +54,8 @@ const User1 = ({navigation}) => {
       >
         <View
           style={{
-            marginTop: 25,
-            height: "10%",
+            backgroundColor: "orange",
+            height: "20%",
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             paddingHorizontal: 20,
@@ -174,53 +68,145 @@ const User1 = ({navigation}) => {
               marginTop: 20,
             }}
           >
-            
+            <TouchableOpacity onPress={() => navigation.navigate(Users)}>
+              <AntDesign name="back" size={30} color="#FFF" />
+            </TouchableOpacity>
             <View
               style={{
                 //width:'100%',
-                marginTop: -53,
+                marginTop: 0,
                 alignItems: "center",
               }}
             >
-              
+              <Text
+                style={{
+                  fontSize: 28,
+                  color: "#FFF",
+                  fontWeight: "bold",
+                }}
+              >
+                User1
+              </Text>
             </View>
           </View>
         </View>
-
-        
-
         <View
           style={{
-            alignSelf: "center",
-            marginTop: -53,
+            height: windowHeight - 500,
+            width: windowWidth,
+            marginTop: 10,
+            backgroundColor: "#FFF",
+            padding: 20,
+            
           }}
         >
-          <UserDevicesTable
-            
-            searchPhrase={searchPhrase}
-            data={fakeData}
-            setClicked={setClicked}
-          />
-         
+          <Text
+            style={{
+              fontSize: 20,
+              width: windowWidth,
+              alignItems:"center",
+              textAlign: "center",
+            }}
+          >
+            User Information
+          </Text>
+          <Text
+            style={{
+              fontSize: 15,
+              marginTop: 20,
+            }}
+          >
+            Name
+          </Text>
+          
+          <Text
+            style={{
+              fontSize: 15,
+              marginTop: 20,
+            }}
+          >
+            No. of Devices
+          </Text>
         </View>
-      </View>
-      {/* </ScrollView> */}
-      <View
-        style={{
-          position: "absolute",
-          width: 100,
-          height: 100,
-          alignItems: "center",
-          justifyContent: "center",
-          right: 0,
-          bottom: 0,
-        }}
-      >
-       </View>
-      </View>
-      
-          </SafeAreaView>
-  )
-}
 
-export default User1
+        <View style={styles.container}>
+          <Table borderStyle={{ borderColor: "transparent" }}>
+            <Row
+              data={tableHead}
+              style={styles.head}
+              textStyle={styles.headtext}
+            />
+          </Table>
+          {data.map((user) => (
+            <TableWrapper style={styles.row}>
+              <Text style={styles.text}>{user.userId}</Text>
+              <Text style={styles.text}>{user.status}</Text>
+              
+              <TouchableOpacity onPress={() => navigation.navigate(Device1)}>
+                <View style={styles.btn}>
+                  <Text style={styles.btnText}>View</Text>
+                </View>
+              </TouchableOpacity>
+            </TableWrapper>
+          ))}
+        </View>
+        <View
+          style={{
+            //width: windowWidth-200,
+            marginLeft: 10,
+            marginRight: 10,
+            marginTop: 25,
+          }}
+        ></View>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default User1;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+    paddingTop: 30,
+  },
+  head: {
+    height: 70,
+    backgroundColor: "#D9DDDC",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
+  headtext: {
+    width: 70,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  view: {
+    height: 0,
+  },
+  text: {
+    width: 75,
+    margin: 8,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  row: {
+    flexDirection: "row",
+    backgroundColor: "lightgray",
+  },
+
+  btn: {
+    width: 60,
+    height: 20,
+    backgroundColor: "rgb(255, 177, 33)",
+    borderRadius: 2,
+    margin: 4,
+    marginTop: 8,
+  },
+  btnText: {
+    textAlign: "center",
+    color: "#fff",
+  },
+});

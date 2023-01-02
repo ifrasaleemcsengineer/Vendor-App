@@ -146,21 +146,7 @@ const Invoice = ({ navigation }) => {
             justifyContent: "space-around",
           }}
         >
-          <TouchableOpacity>
-            <Text
-              style={{
-                backgroundColor: "orange",
-                width: 100,
-                height: 40,
-                textAlign: "center",
-                paddingTop: 10,
-                color: "white",
-                borderRadius: 5,
-              }}
-            >
-              Print
-            </Text>
-          </TouchableOpacity>
+          
           <TouchableOpacity onPress={() => setShow(true)}>
             <Text
               style={{
