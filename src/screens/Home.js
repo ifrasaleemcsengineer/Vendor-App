@@ -22,151 +22,151 @@ const Home = ({ navigation }) => {
   const data = [
     {
       userId: "01",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "02",
-      status: "UnAssigned",
+      name: "Ifra",
     },
     {
       userId: "03",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "04",
-      status: "UnAssigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
     {
       userId: "055",
-      status: "Assigned",
+      name: "Ifra",
     },
   ];
 

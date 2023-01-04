@@ -8,7 +8,6 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
 import UserTable from "../../src/components/UserTable";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import CreateDevice from "./CreateDevice";
 import SearchBar from "../components/SearchBar";
 import DeviceTable from "../components/DeviceTable";
 
@@ -165,9 +164,7 @@ const Devices = ({ navigation }) => {
           bottom: 0,
         }}
       >
-        <TouchableOpacity onPress={() => navigation.navigate(CreateDevice)}>
-          <Ionicons name="add-circle" size={80} color="orange" />
-        </TouchableOpacity>
+        
       </View>
     </SafeAreaView>
   );

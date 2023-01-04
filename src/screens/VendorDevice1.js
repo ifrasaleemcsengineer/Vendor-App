@@ -138,29 +138,7 @@ const VendorDevice1 = ({ navigation }) => {
             </Text>
           </View>
 
-          <View
-            style={{
-              height: 100,
-              width: 340,
-              marginTop: 5,
-              marginLeft: 10,
-              backgroundColor: "#E6E6E6",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Cylinder name="battery" size={40} color="orange" />
-            <Text
-              style={{
-                fontSize: 26,
-                color: "orange",
-                fontWeight: "bold",
-              }}
-            >
-              Good Status
-            </Text>
-          </View>
+         
         </View>
         <View
           style={{

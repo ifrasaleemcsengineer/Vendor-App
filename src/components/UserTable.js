@@ -5,8 +5,9 @@ import { windowHeight, windowWidth } from "../utils/Dimensions";
 import { useNavigation } from "@react-navigation/native";
 import User1 from "../screens/User1";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
+import UpdateUser from "../screens/UpdateUser";
 
-const Item = ({ userId, status }) => {
+const Item = ({ userId, name }) => {
   const index = 0;
   function _alertIndex(index) {
     Alert.alert(`This is row ${index + 1}`);
@@ -16,22 +17,27 @@ const Item = ({ userId, status }) => {
   return (
     <View style={styles.row}>
       <Text style={styles.text}>{userId}</Text>
-      <Text style={styles.text}>{status}</Text>
+      <Text style={styles.text}>{name}</Text>
      
       <TouchableOpacity onPress={() => navigation.navigate(User1)}>
       <View style={styles.btn}>
           <Text style={styles.btnText}>View</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate(UpdateUser)}>
+      <View style={styles.btn}>
+          <Text style={styles.btnText}>Update User</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
 const UserTable = ({ searchPhrase, setClicked, data }) => {
-  const tableHead = ["UID", "Status", "Action"];
+  const tableHead = ["UID", "Name", "Action"];
   const renderItem = ({ item }) => {
     // when no input, show all
     if (searchPhrase === "") {
-      return <Item userId={item.userId} status={item.status} />;
+      return <Item userId={item.userId} name={item.name} />;
     }
     // filter of the userId
     if (
@@ -39,15 +45,15 @@ const UserTable = ({ searchPhrase, setClicked, data }) => {
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item userId={item.userId} status={item.status} />;
+      return <Item userId={item.userId} name={item.name} />;
     }
     // filter of the description
     if (
-      item.status
+      item.name
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item userId={item.userId} status={item.status} />;
+      return <Item userId={item.userId} name={item.name} />;
     }
   };
 
@@ -105,7 +111,7 @@ const styles = StyleSheet.create({
 
   headtext: {
     width: 70,
-    marginLeft: 25,
+    marginLeft: 4,
     marginRight: 20,
   },
   view: {
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
   text: {
     width: 75,
     margin: 8,
-    marginLeft: 24,
+    marginLeft: 10,
     marginRight: 20,
   },
   row: {

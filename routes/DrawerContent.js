@@ -15,8 +15,7 @@ import CustomDrawer from "../src/components/CustomDrawer";
 import Invoice from "../src/screens/Invoice";
 import Devices from "../src/screens/Devices";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-
-import CreateDevice from "../src/screens/CreateDevice";
+import Setpricing from "../src/screens/price"
 import TermsConditions from "../src/screens/TermsConditions";
 import PrivacyPolicy from "../src/screens/PrivacyPolicy";
 
@@ -37,6 +36,7 @@ export function DrawerContent (props) {
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Users" component={Users} />
       <Drawer.Screen name="Devices" component={Devices} />
+      <Drawer.Screen name="Set Pricing" component={Setpricing} />
       <Drawer.Screen name="History" component={History} />
       <Drawer.Screen name="My Accounts" component={PaymentInfo} />
       <Drawer.Screen name="Notifications" component={Notifications} />
