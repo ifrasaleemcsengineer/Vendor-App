@@ -8,41 +8,43 @@ import Device1 from "../src/screens/Device1";
 import FAQ from "../src/screens/FAQ";
 import DrawerContent from "./DrawerContent";
 import CreateUser from "../src/screens/CreateUser";
+import UpdateUser from "../src/screens/UpdateUser";
 import Refuel from "../src/screens/Refuel";
 import PaymentForm from "../src/screens/PaymentForm";
 import User1 from "../src/screens/User1";
-import CreateDevice from "../src/screens/CreateDevice";
 import PaymentInfo from "../src/screens/PaymentInfo";
 import VendorDevice1 from "../src/screens/VendorDevice1";
 import TermsConditions from "../src/screens/TermsConditions";
 import PrivacyPolicy from "../src/screens/PrivacyPolicy";
+import Assign from "../src/screens/Assign";
 
 const Stack = createNativeStackNavigator();
 
 export const MyStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LogIn"
-      screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        initialRouteName="LogIn"
+        screenOptions={{ headerShown: false }}
+      >
         {/* <Stack.Screen name="LogIn" component={LogIn} /> */}
         <Stack.Screen name="Home" component={DrawerContent} />
-        <Stack.Screen name="Notifications" component={Notifications}/>
+        <Stack.Screen name="Notifications" component={Notifications} />
         <Stack.Screen name="Device1" component={Device1} />
         <Stack.Screen name="FAQ" component={FAQ} />
+        <Stack.Screen name="Assign" component={Assign} />
         <Stack.Screen name="User1" component={User1} />
         <Stack.Screen name="CreateUser" component={CreateUser} />
+        <Stack.Screen name="UpdateUser" component={UpdateUser} />
         <Stack.Screen name="Refuel" component={Refuel} />
         <Stack.Screen name="PaymentForm" component={PaymentForm} />
-        <Stack.Screen name="CreateDevice" component={CreateDevice} />
         <Stack.Screen name="LogIn" component={LogIn} />
         <Stack.Screen name="VendorDevice1" component={VendorDevice1} />
         <Stack.Screen name="TermsConditions" component={TermsConditions} />
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
 
-
-
         {/* <Stack.Screen name="Home1" component={Home1} /> */}
-      </Stack.Navigator>      
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

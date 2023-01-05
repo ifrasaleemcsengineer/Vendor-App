@@ -5,10 +5,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Devices from "./Devices";
+import { useNavigation } from "@react-navigation/native";
 
-const CreateDevice = ({ navigation }) => {
-  const [devicesAmount, setDevicesAmount] = useState("");
-  const [deviceid, setDeviceId] = useState("");
+const Setpricing = ({ navigation, props }) => {
+  const nav = useNavigation();
+
+    const [devicesAmount, setDevicesAmount] = useState("");
+    const [gasamount, setgasamount] = useState("");
+
 
   return (
     <SafeAreaView
@@ -40,8 +44,8 @@ const CreateDevice = ({ navigation }) => {
               marginTop: 20,
             }}
           >
-            <TouchableOpacity onPress={() => navigation.navigate(Devices)}>
-              <AntDesign name="back" size={30} color="#FFF" />
+            <TouchableOpacity onPress={() => nav.openDrawer()}>
+              <AntDesign name="bars" size={30} color="white" />
             </TouchableOpacity>
             <View
               style={{
@@ -57,7 +61,7 @@ const CreateDevice = ({ navigation }) => {
                   fontWeight: "bold",
                 }}
               >
-                Create Device
+                Set Price
               </Text>
             </View>
           </View>
@@ -69,9 +73,9 @@ const CreateDevice = ({ navigation }) => {
           }}
         >
           <TextInput
-            value={deviceid}
-            onChangeText={setDeviceId}
-            placeholder="Enter Device Id"
+            value={gasamount}
+            onChangeText={setgasamount}
+            placeholder="Enter Gas Amount (Kg)"
             style={{
               backgroundColor: "white",
               width: "100%",
@@ -103,7 +107,8 @@ const CreateDevice = ({ navigation }) => {
               width: "50%",
             }}
           >
-            <Button onPress={""} title="Create" color="orange" />
+            
+            <Button onPress title="Set" color="orange" />
           </View>
         </View>
       </View>
@@ -111,4 +116,4 @@ const CreateDevice = ({ navigation }) => {
   );
 };
 
-export default CreateDevice;
+export default Setpricing;
