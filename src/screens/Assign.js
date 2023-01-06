@@ -38,7 +38,8 @@ import { CheckBox } from "react-native-elements";
 const Assign = ({ navigation }) => {
   const [dataDevices, setDataDevices] = useState([]);
   const [checked, setChecked] = useState([]);
-  const [isSelected, setSelection] = useState(false);
+  const [price, setPrice] = useState([]);
+  const [totalValue, setValue] = useState();
 
   const tableHead = ["Devices"];
   const data = [
@@ -46,26 +47,39 @@ const Assign = ({ navigation }) => {
     { deviceId: "002" },
     { deviceId: "003" },
     { deviceId: "004" },
-    // { deviceId: "005" },
-    // { deviceId: "006" },
-    // { deviceId: "007" },
-    // { deviceId: "008" },
-    // { deviceId: "009" },
-    // { deviceId: "010" },
-    // { deviceId: "011" },
-    // { deviceId: "012" },
-    // { deviceId: "013" },
-    // { deviceId: "014" },
-    // { deviceId: "015" },
+    { deviceId: "005" },
+    { deviceId: "006" },
+    { deviceId: "007" },
+    { deviceId: "008" },
+    { deviceId: "009" },
+    { deviceId: "010" },
+    { deviceId: "011" },
+    { deviceId: "012" },
+    { deviceId: "013" },
+    { deviceId: "014" },
+    { deviceId: "015" },
   ];
 
   console.log(checked);
+
+  // Return classes based on whether item is checked
+  var isChecked = (item) => checked.includes(item);
+
+  const checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
+
+  const onCHange = () => {
+    setValue(price);
+  };
 
   const renderItem = ({ item, index }) => {
     return (
       <View style={styles.row} key={index}>
         <Icon
-          name={isSelected ? "check" : "square"}
+          name={isChecked(item.deviceId) ? "check" : "square"}
           size={30}
           color="orange"
           onPress={() => {
@@ -142,9 +156,10 @@ const Assign = ({ navigation }) => {
           }}
         >
           <TextInput
-            //   value={name}
-            //   onChangeText={setName}
+            value={price}
+            onChangeText={setPrice}
             placeholder="Enter Price"
+            keyboardType="numeric-pad"
             style={{
               backgroundColor: "white",
               width: "60%",
@@ -161,10 +176,10 @@ const Assign = ({ navigation }) => {
               margin: 20,
             }}
           >
-            <Button title="Assign" color="orange" />
+            <Button title="Assign" color="orange" onPress={onCHange} />
           </View>
         </View>
-        <View style={{ height: windowHeight - 200 }}>
+        <View style={{ height: windowHeight - 300 }}>
           <FlatList
             stickyHeaderIndices={[0]}
             ListHeaderComponent={
@@ -183,6 +198,10 @@ const Assign = ({ navigation }) => {
             ListFooterComponent={<View />}
           />
           {/* </TouchableOpacity> */}
+        </View>
+        <View>
+          <Text>{`Items checked are: [${checkedItems}`}]</Text>
+          <Text>{typeof totalValue}</Text>
         </View>
       </View>
     </SafeAreaView>
