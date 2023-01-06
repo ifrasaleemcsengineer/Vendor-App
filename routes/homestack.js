@@ -16,19 +16,23 @@ import PaymentInfo from "../src/screens/PaymentInfo";
 import VendorDevice1 from "../src/screens/VendorDevice1";
 import TermsConditions from "../src/screens/TermsConditions";
 import PrivacyPolicy from "../src/screens/PrivacyPolicy";
+import Assign from "../src/screens/Assign";
 
 const Stack = createNativeStackNavigator();
 
 export const MyStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LogIn"
-      screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        initialRouteName="LogIn"
+        screenOptions={{ headerShown: false }}
+      >
         {/* <Stack.Screen name="LogIn" component={LogIn} /> */}
         <Stack.Screen name="Home" component={DrawerContent} />
-        <Stack.Screen name="Notifications" component={Notifications}/>
+        <Stack.Screen name="Notifications" component={Notifications} />
         <Stack.Screen name="Device1" component={Device1} />
         <Stack.Screen name="FAQ" component={FAQ} />
+        <Stack.Screen name="Assign" component={Assign} />
         <Stack.Screen name="User1" component={User1} />
         <Stack.Screen name="CreateUser" component={CreateUser} />
         <Stack.Screen name="UpdateUser" component={UpdateUser} />
@@ -39,10 +43,8 @@ export const MyStack = () => {
         <Stack.Screen name="TermsConditions" component={TermsConditions} />
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicy} />
 
-
-
         {/* <Stack.Screen name="Home1" component={Home1} /> */}
-      </Stack.Navigator>      
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

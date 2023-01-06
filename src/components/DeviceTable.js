@@ -3,10 +3,9 @@ import { StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import { Table, TableWrapper, Row, Cell } from "react-native-table-component";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import { useNavigation } from "@react-navigation/native";
-import User1 from "../screens/User1";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
-import Device1 from "../screens/Device1";
 import VendorDevice1 from "../screens/VendorDevice1";
+import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 
 const Item = ({ userId, status }) => {
   const index = 0;
@@ -19,10 +18,10 @@ const Item = ({ userId, status }) => {
     <View style={styles.row}>
       <Text style={styles.text}>{userId}</Text>
       <Text style={styles.text}>{status}</Text>
-     
+
       <TouchableOpacity onPress={() => navigation.navigate(VendorDevice1)}>
-      <View style={styles.btn}>
-          <Text style={styles.btnText}>View</Text>
+        <View style={{ marginLeft: 30 }}>
+          <FontAwesome5Icon name="angle-right" size={25} color="orange" />
         </View>
       </TouchableOpacity>
     </View>
@@ -69,22 +68,22 @@ const DeviceTable = ({ searchPhrase, setClicked, data }) => {
           }}
         >
           {/* <TouchableOpacity onPress={() => navigation.navigate("User1")}> */}
-            <FlatList
-              stickyHeaderIndices={[0]}
-              ListHeaderComponent={
-                <Table borderStyle={{ borderColor: "transparent" }}>
-                  <Row
-                    data={tableHead}
-                    style={styles.head}
-                    textStyle={styles.headtext}
-                  />
-                </Table>
-              }
-              data={data}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-              ListFooterComponent={<View />}
-            />
+          <FlatList
+            stickyHeaderIndices={[0]}
+            ListHeaderComponent={
+              <Table borderStyle={{ borderColor: "transparent" }}>
+                <Row
+                  data={tableHead}
+                  style={styles.head}
+                  textStyle={styles.headtext}
+                />
+              </Table>
+            }
+            data={data}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+            ListFooterComponent={<View />}
+          />
           {/* </TouchableOpacity> */}
         </View>
       </View>
@@ -130,7 +129,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgb(255, 177, 33)",
     borderRadius: 2,
     margin: 4,
-    marginTop:8
+    marginTop: 8,
   },
   btnText: {
     textAlign: "center",
