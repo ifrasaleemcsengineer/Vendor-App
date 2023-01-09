@@ -11,6 +11,30 @@ import { Row, Table } from "react-native-table-component";
 import Icon from "react-native-vector-icons/Feather";
 import { CheckBox } from "react-native-elements";
 
+// const Item = ({ deviceId }) => {
+//   const [deviceChecked, setDevicesChecked] = useState(false);
+//   const [devices, SetDevices] = useState([]);
+//   const check = () => {
+//     setDevicesChecked(!deviceChecked);
+//     if (deviceChecked === false) {
+//       console.log(deviceId);
+//     }
+//   };
+
+//   return (
+//     <View style={styles.row}>
+//       <Icon
+//         name={deviceChecked ? "check" : "square"}
+//         size={30}
+//         color="orange"
+//         onPress={check}
+//         style={{ marginLeft: 15 }}
+//       />
+//       <Text style={styles.text}>{deviceId}</Text>
+//     </View>
+//   );
+// };
+
 const Assign = ({ navigation }) => {
   const [dataDevices, setDataDevices] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -176,9 +200,9 @@ const Assign = ({ navigation }) => {
           />
           {/* </TouchableOpacity> */}
         </View>
-        <View style={{marginTop: 30, marginLeft: 10}}>
-          <Text>{`Items checked are: [${checkedItems}`}]</Text>
-          <Text style={{fontWeight: "800"}}>Total Price: {totalValue}</Text>
+        <View>
+          <Text style={{marginTop:20,marginLeft:20}}>{`Items checked are: [${checkedItems}`}]</Text>
+          <Text style={{marginTop:10,marginLeft:20, fontWeight:"bold"}}>Total Price: {totalValue}</Text>
         </View>
       </View>
     </SafeAreaView>

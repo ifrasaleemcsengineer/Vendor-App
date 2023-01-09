@@ -3,13 +3,12 @@ import { StyleSheet, View, Text, TouchableOpacity, Alert } from "react-native";
 import { Table, TableWrapper, Row, Cell } from "react-native-table-component";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import { useNavigation } from "@react-navigation/native";
-import User1 from "../screens/User1";
-import { FlatList } from "react-native-gesture-handler";
-import UpdateUser from "../screens/UpdateUser";
-import Assign from "../screens/Assign";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
+import VendorDevice1 from "../screens/VendorDevice1";
 import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
+import Invoice1 from "../screens/Invoice1";
 
-const Item = ({ userId, name }) => {
+const Item = ({ Invoice_No, status, Amount }) => {
   const index = 0;
   function _alertIndex(index) {
     Alert.alert(`This is row ${index + 1}`);
@@ -18,51 +17,38 @@ const Item = ({ userId, name }) => {
 
   return (
     <View style={styles.row}>
-      <Text style={styles.text}>{userId}</Text>
-      <Text style={styles.text}>{name}</Text>
-      <View style={styles.icons}>
-        <TouchableOpacity onPress={() => navigation.navigate(Assign)}>
-          <View style={styles.icon}>
-            <FontAwesome5Icon name="plus" size={20} color="orange" />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate(UpdateUser)}>
-          <View style={styles.icon}>
-            <FontAwesome5Icon name="pen" size={20} color="orange" />
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate(User1)}>
-          <View style={styles.icon}>
-            <FontAwesome5Icon name="angle-right" size={20} color="orange" />
-          </View>
-        </TouchableOpacity>
-      </View>
+      <Text style={styles.textId}>{Invoice_No}</Text>
+      <Text style={styles.text}>{status}</Text>
+      <Text style={styles.text}>{Amount}</Text>
+
+      <TouchableOpacity onPress={() => navigation.navigate(Invoice1)}>
+        <Text
+          style={{
+            backgroundColor: "orange",
+            width: 50,
+            height: 30,
+            textAlign: "center",
+            paddingTop: 5,
+            color: "white",
+            borderRadius: 5,
+          }}
+        >
+          Invoice
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
-const UserTable = ({ searchPhrase, setClicked, data }) => {
-  const tableHead = ["UserId", "Name", "Action"];
+const InvoiceTable = ({ setClicked, data }) => {
+  const tableHead = ["Invoice#", "Status", "Amount", "Action"];
   const renderItem = ({ item }) => {
-    // when no input, show all
-    if (searchPhrase === "") {
-      return <Item userId={item.userId} name={item.name} />;
-    }
-    // filter of the userId
-    if (
-      item.userId
-        .toUpperCase()
-        .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
-    ) {
-      return <Item userId={item.userId} name={item.name} />;
-    }
-    // filter of the description
-    if (
-      item.name
-        .toUpperCase()
-        .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
-    ) {
-      return <Item userId={item.userId} name={item.name} />;
-    }
+    return (
+      <Item
+        Invoice_No={item.Invoice_No}
+        status={item.status}
+        Amount={item.Amount}
+      />
+    );
   };
 
   const navigation = useNavigation();
@@ -118,17 +104,24 @@ const styles = StyleSheet.create({
   },
 
   headtext: {
-    width: 70,
-    marginLeft: 4,
+    width: windowWidth - 300,
+    marginLeft: 25,
     marginRight: 20,
   },
   view: {
     height: 0,
   },
   text: {
-    width: 75,
+    width: windowWidth - 300,
     margin: 8,
-    marginLeft: 10,
+    marginLeft: 15,
+    marginRight: 20,
+  },
+  textId: {
+    width: windowWidth - 300,
+    margin: 8,
+    marginLeft: 15,
+    paddingLeft: 25,
     marginRight: 20,
   },
   row: {
@@ -144,18 +137,10 @@ const styles = StyleSheet.create({
     margin: 4,
     marginTop: 8,
   },
-  icon: {
-    margin: 5,
-    marginLeft: 18,
-  },
-  icons: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
   btnText: {
     textAlign: "center",
     color: "#fff",
   },
 });
 
-export default UserTable;
+export default InvoiceTable;

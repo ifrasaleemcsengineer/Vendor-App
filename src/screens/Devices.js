@@ -20,51 +20,51 @@ const Devices = ({ navigation }) => {
   // Temporary data
   const data = [
     {
-      userId: "01",
+      DeviceId: "01",
       status: "Assigned",
     },
     {
-      userId: "02",
+      DeviceId: "02",
       status: "UnAssigned",
     },
     {
-      userId: "03",
+      DeviceId: "03",
       status: "Assigned",
     },
     {
-      userId: "04",
+      DeviceId: "04",
       status: "UnAssigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
     {
-      userId: "055",
+      DeviceId: "055",
       status: "Assigned",
     },
   ];
