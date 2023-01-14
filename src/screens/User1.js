@@ -9,7 +9,7 @@ import { Row, Table, TableWrapper } from "react-native-table-component";
 import Device1 from "./Device1";
 
 const User1 = ({ navigation }) => {
-  const tableHead = ["Device ID", "Status", "Action"];
+  const tableHead = ["Device ID", "Action"];
   // Temporary data
   const data = [
     {
@@ -140,7 +140,6 @@ const User1 = ({ navigation }) => {
           {data.map((user) => (
             <TableWrapper style={styles.row}>
               <Text style={styles.text}>{user.userId}</Text>
-              <Text style={styles.text}>{user.status}</Text>
               
               <TouchableOpacity onPress={() => navigation.navigate(Device1)}>
                 <View style={styles.btn}>
@@ -187,13 +186,14 @@ const styles = StyleSheet.create({
     height: 0,
   },
   text: {
-    width: 75,
-    margin: 8,
-    marginLeft: 20,
+    width: 70,
+    marginTop:8,
+    marginLeft: 30,
     marginRight: 20,
   },
   row: {
     flexDirection: "row",
+    justifyContent:"space-between",
     backgroundColor: "lightgray",
   },
 
@@ -202,8 +202,8 @@ const styles = StyleSheet.create({
     height: 20,
     backgroundColor: "rgb(255, 177, 33)",
     borderRadius: 2,
-    margin: 4,
     marginTop: 8,
+    marginRight:100
   },
   btnText: {
     textAlign: "center",

@@ -9,15 +9,12 @@ import UpdateUser from "../screens/UpdateUser";
 import Assign from "../screens/Assign";
 import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 
-const Item = ({ userId, name }) => {
-  const index = 0;
-  function _alertIndex(index) {
-    Alert.alert(`This is row ${index + 1}`);
-  }
+const Item = ({ userId, name,index }) => {
+ 
   const navigation = useNavigation();
 
   return (
-    <View style={styles.row}>
+    <View style={styles.row} key={index}>
       <Text style={styles.text}>{userId}</Text>
       <Text style={styles.text}>{name}</Text>
       <View style={styles.icons}>
@@ -41,11 +38,11 @@ const Item = ({ userId, name }) => {
   );
 };
 const UserTable = ({ searchPhrase, setClicked, data }) => {
-  const tableHead = ["UID", "Name", "Action"];
-  const renderItem = ({ item }) => {
+  const tableHead = ["UserId", "Name", "Action"];
+  const renderItem = ({ item, index }) => {
     // when no input, show all
     if (searchPhrase === "") {
-      return <Item userId={item.userId} name={item.name} />;
+      return <Item userId={item.userId} name={item.name} index={index}/>;
     }
     // filter of the userId
     if (
@@ -53,7 +50,7 @@ const UserTable = ({ searchPhrase, setClicked, data }) => {
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item userId={item.userId} name={item.name} />;
+      return <Item userId={item.userId} name={item.name} index={index}/>;
     }
     // filter of the description
     if (
@@ -61,7 +58,7 @@ const UserTable = ({ searchPhrase, setClicked, data }) => {
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item userId={item.userId} name={item.name} />;
+      return <Item userId={item.userId} name={item.name} index={index} />;
     }
   };
 

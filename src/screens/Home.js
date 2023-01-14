@@ -178,10 +178,6 @@ const Home = ({ navigation }) => {
     getData();
   }, []);
 
-  const onButtonPressed = () => {
-    Alert.alert("Button Pressed");
-  };
-
   return (
     <SafeAreaView
       style={{
@@ -192,14 +188,13 @@ const Home = ({ navigation }) => {
     >
       <View
         style={{
-          flex: 1,
           backgroundColor: "lightgray",
         }}
       >
         <View
           style={{
             backgroundColor: "lightgray",
-            height: "45%",
+            height: "31%",
             borderBottomLeftRadius: 20,
             borderBottomRightRadius: 20,
             paddingHorizontal: 20,
@@ -233,16 +228,26 @@ const Home = ({ navigation }) => {
           <View
             style={{
               alignItems: "center",
-              marginTop: windowHeight - 700,             
+              marginTop: windowHeight - 700,
               justifyContent: "center",
-              height: windowHeight - 450, width: windowWidth, alignItems: "center", paddingLeft:110,
-              paddingRight:70,
+              height: windowHeight - 450,
+              width: windowWidth,
+              alignItems: "center",
+              paddingLeft: 110,
+              paddingRight: 70,
             }}
           >
             <Image
               source={require("../../assets/images/logo_1.png")}
-              style={{ height: windowHeight - 390, width: windowWidth, alignItems: "center", paddingLeft:100,
-              paddingRight:70, }}
+              style={{
+                height: windowHeight - 390,
+                width: windowWidth,
+                alignItems: "center",
+                paddingLeft: 100,
+                paddingRight: 70,
+                marginBottom: 20,
+                marginTop: 20,
+              }}
             />
           </View>
         </View>

@@ -8,9 +8,7 @@ import Users from "./Users";
 
 const UpdateUser = ({ navigation }) => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [devicesno, setDevicesNo] = useState("");
-  const [deviceid, setDeviceId] = useState("");
 
   return (
     <SafeAreaView
@@ -85,20 +83,7 @@ const UpdateUser = ({ navigation }) => {
             }}
           />
 
-          <TextInput
-            value={email}
-            onChangeText={setEmail}
-            placeholder="Enter Email"
-            style={{
-              backgroundColor: "white",
-              width: "100%",
-              borderColor: "#e8e8e8",
-              borderWidth: 4,
-              borderRadius: 6,
-              paddingHorizontal: 10,
-              marginVertical: 12,
-            }}
-          />
+      
 
           <TextInput
             value={devicesno}
@@ -115,20 +100,6 @@ const UpdateUser = ({ navigation }) => {
             }}
           />
 
-          <TextInput
-            value={deviceid}
-            onChangeText={setDeviceId}
-            placeholder="Enter Device Id"
-            style={{
-              backgroundColor: "white",
-              width: "100%",
-              borderColor: "#e8e8e8",
-              borderWidth: 4,
-              borderRadius: 6,
-              paddingHorizontal: 10,
-              marginVertical: 12,
-            }}
-          />
          
              <View
           style={{

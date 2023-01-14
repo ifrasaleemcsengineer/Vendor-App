@@ -7,16 +7,13 @@ import { FlatList, ScrollView } from "react-native-gesture-handler";
 import VendorDevice1 from "../screens/VendorDevice1";
 import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
 
-const Item = ({ userId, status }) => {
-  const index = 0;
-  function _alertIndex(index) {
-    Alert.alert(`This is row ${index + 1}`);
-  }
+const Item = ({ DeviceId, status, index }) => {
+
   const navigation = useNavigation();
 
   return (
-    <View style={styles.row}>
-      <Text style={styles.text}>{userId}</Text>
+    <View style={styles.row} key={index}>
+      <Text style={styles.text}>{DeviceId}</Text>
       <Text style={styles.text}>{status}</Text>
 
       <TouchableOpacity onPress={() => navigation.navigate(VendorDevice1)}>
@@ -28,19 +25,19 @@ const Item = ({ userId, status }) => {
   );
 };
 const DeviceTable = ({ searchPhrase, setClicked, data }) => {
-  const tableHead = ["UID", "Status", "Action"];
-  const renderItem = ({ item }) => {
+  const tableHead = ["DeviceId", "Status", "Action"];
+  const renderItem = ({ item ,index}) => {
     // when no input, show all
     if (searchPhrase === "") {
-      return <Item userId={item.userId} status={item.status} />;
+      return <Item DeviceId={item.DeviceId} status={item.status} index={index} />;
     }
-    // filter of the userId
+    // filter of the DeviceId
     if (
-      item.userId
+      item.DeviceId
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item userId={item.userId} status={item.status} />;
+      return <Item DeviceId={item.DeviceId} status={item.status} index={index}/>;
     }
     // filter of the description
     if (
@@ -48,7 +45,7 @@ const DeviceTable = ({ searchPhrase, setClicked, data }) => {
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item userId={item.userId} status={item.status} />;
+      return <Item DeviceId={item.DeviceId} status={item.status}index={index} />;
     }
   };
 

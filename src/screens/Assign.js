@@ -9,31 +9,6 @@ import { FlatList, ScrollView, TextInput } from "react-native-gesture-handler";
 import Users from "./Users";
 import { Row, Table } from "react-native-table-component";
 import Icon from "react-native-vector-icons/Feather";
-import { CheckBox } from "react-native-elements";
-
-// const Item = ({ deviceId }) => {
-//   const [deviceChecked, setDevicesChecked] = useState(false);
-//   const [devices, SetDevices] = useState([]);
-//   const check = () => {
-//     setDevicesChecked(!deviceChecked);
-//     if (deviceChecked === false) {
-//       console.log(deviceId);
-//     }
-//   };
-
-//   return (
-//     <View style={styles.row}>
-//       <Icon
-//         name={deviceChecked ? "check" : "square"}
-//         size={30}
-//         color="orange"
-//         onPress={check}
-//         style={{ marginLeft: 15 }}
-//       />
-//       <Text style={styles.text}>{deviceId}</Text>
-//     </View>
-//   );
-// };
 
 const Assign = ({ navigation }) => {
   const [dataDevices, setDataDevices] = useState([]);
@@ -72,7 +47,7 @@ const Assign = ({ navigation }) => {
     : "";
 
   const onCHange = () => {
-    setValue(price);
+    setValue(checked.length * parseInt(price));
   };
 
   const renderItem = ({ item, index }) => {
@@ -200,8 +175,12 @@ const Assign = ({ navigation }) => {
           {/* </TouchableOpacity> */}
         </View>
         <View>
-          <Text>{`Items checked are: [${checkedItems}`}]</Text>
-          <Text>{typeof totalValue}</Text>
+          <Text style={{ marginTop: 20, marginLeft: 20 }}>
+            {`Items checked are: [${checkedItems}`}]
+          </Text>
+          <Text style={{ marginTop: 10, marginLeft: 20, fontWeight: "bold" }}>
+            Total Price: {totalValue}
+          </Text>
         </View>
       </View>
     </SafeAreaView>

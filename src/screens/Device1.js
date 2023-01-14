@@ -6,9 +6,7 @@ import { windowHeight } from "../../src/utils/Dimensions";
 import { windowWidth } from "../../src/utils/Dimensions";
 import Weight from "react-native-vector-icons/FontAwesome5";
 import Battery from "react-native-vector-icons/Entypo";
-import Cylinder from "react-native-vector-icons/MaterialCommunityIcons";
 import Refuel from "./Refuel";
-import Devices from "./Devices";
 import User1 from "./User1";
 
 const Device1 = ({ navigation }) => {
@@ -37,8 +35,7 @@ const Device1 = ({ navigation }) => {
         >
           <View
             style={{
-              //flexDirection: 'row',
-              //justifyContent: 'space-between',
+              
               marginTop: 20,
             }}
           >
@@ -85,7 +82,7 @@ const Device1 = ({ navigation }) => {
 
         <View
           style={{
-            height: windowHeight - 480,
+            height: windowHeight - 600,
             width: windowWidth,
             marginTop: 10,
             //backgroundColor:'#FFF',
@@ -137,37 +134,13 @@ const Device1 = ({ navigation }) => {
               80%
             </Text>
           </View>
-
-          <View
-            style={{
-              height: 100,
-              width: 340,
-              marginTop: 5,
-              marginLeft: 10,
-              backgroundColor: "#E6E6E6",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Cylinder name="battery" size={40} color="orange" />
-            <Text
-              style={{
-                fontSize: 26,
-                color: "orange",
-                fontWeight: "bold",
-              }}
-            >
-              Good Status
-            </Text>
-          </View>
         </View>
         <View
           style={{
             //width: windowWidth-200,
             marginLeft: 10,
             marginRight: 10,
-            marginTop: 25,
+            marginTop: 20,
           }}
         >
           <Button
